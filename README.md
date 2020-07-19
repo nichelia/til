@@ -17,4 +17,4 @@ Overall TILs: 1
 
 ### Kubernetes
 
-- [Delete Stuck Namespace](kubernetes/delete-stuck-namespace.md) - 2020-07-19 07:59 (BST)
+- [Delete Stuck Namespace](kubernetes/delete-stuck-namespace.md) 
