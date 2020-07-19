@@ -1,3 +1,5 @@
+![til CD](https://github.com/nichelia/til/workflows/til%20CD/badge.svg)
+
 # TIL
 
 > Today I Learned
