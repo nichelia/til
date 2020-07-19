@@ -1,5 +1,6 @@
 from pathlib import Path
 from typing import Dict
+import time
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -104,6 +105,19 @@ def get_topic_link(text: str) -> str:
     return f"{text.lower().replace(' ', '-')}"
 
 
+def get_topic_created_datetime(epoch: float) -> str:
+    """
+    Generate a topic creation datetime.
+
+    Args:
+        epoch {float} The epoch timestamp of creation time
+
+    Returns:
+        {str} Human readable datetime
+    """
+    return time.strftime("%Y-%m-%d %H:%M (%Z)", time.localtime(epoch))
+
+
 def get_categories_and_topics(root_directory: str) -> Dict:
     """
     Generate the category/topic data for README.
@@ -129,15 +143,21 @@ def get_categories_and_topics(root_directory: str) -> Dict:
         if category == "":
             category = new_category
         if new_category != category:
-            data = {"name": get_category_name(category), "link": get_category_link(category), "topics": topics}
+            data = {"name": get_category_name(category),
+                    "link": get_category_link(category),
+                    "topics": topics}
             ret["categories"].append(data)
             category = new_category
             topics = []
         else:
-            data = {"name": get_topic_name(str(file.stem)), "link": get_topic_link(str(file))}
+            data = {"name": get_topic_name(str(file.stem)),
+                    "link": get_topic_link(str(file)),
+                    "createdDateTime": get_topic_created_datetime(file.stat().st_birthtime)}
             topics.append(data)
         if len(files) == 0:
-            data = {"name": get_category_name(new_category), "link": get_category_link(new_category), "topics": topics}
+            data = {"name": get_category_name(new_category),
+                    "link": get_category_link(new_category),
+                    "topics": topics}
             ret["categories"].append(data)
 
     return ret

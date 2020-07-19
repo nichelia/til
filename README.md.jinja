@@ -21,7 +21,7 @@ Overall TILs: {{ tils }}
 ### {{ category.name }}
 
 {% for topic in category.topics %}
-- [{{ topic.name }}]({{ topic.link }})
+- [{{ topic.name }}]({{ topic.link }}) {% if topic.createdDateTime is defined %}- {{ topic.createdDateTime }}{% endif %}
 {% endfor %}
 
 {% endfor %}
