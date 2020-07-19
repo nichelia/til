@@ -1,6 +1,5 @@
 # Delete Stuck Namespace
 
-
 ## Description
 
 I encountered instances where a namespace on a Kubernetes cluster, would get stuck on `Terminating` state.
@@ -58,7 +57,6 @@ curl -k -H "Content-Type: application/json" -X PUT --data-binary @/tmp/${NAMESPA
 kubectl get ns
 ```
 
-
-References:
+## References:
 - [Docker - How to Delete a Kubernetes Namespace Stuck in the Terminating State](https://success.docker.com/article/kubernetes-namespace-stuck-in-terminating)
 - [IBM - A namespace is stuck in the Terminating state](https://www.ibm.com/support/knowledgecenter/SSBS6K_3.2.0/troubleshoot/ns_terminating.html)
