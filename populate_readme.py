@@ -115,6 +115,8 @@ def get_topic_created_datetime(epoch: float) -> str:
     Returns:
         {str} Human readable datetime
     """
+    if epoch == 0:
+        return None
     return time.strftime("%Y-%m-%d %H:%M (%Z)", time.localtime(epoch))
 
 
@@ -152,7 +154,7 @@ def get_categories_and_topics(root_directory: str) -> Dict:
         else:
             data = {"name": get_topic_name(str(file.stem)),
                     "link": get_topic_link(str(file)),
-                    "createdDateTime": get_topic_created_datetime(file.stat().st_birthtime)}
+                    "createdDateTime": get_topic_created_datetime(getattr(file.stat(), "st_birthtime", 0))}
             topics.append(data)
         if len(files) == 0:
             data = {"name": get_category_name(new_category),
