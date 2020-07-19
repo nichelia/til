@@ -5,12 +5,23 @@
 This repository is a placeholder of things I learn on a daily basis. This may include programming languages/tricks/hacks, technologies, command line tools, etc.
 Inspired by [jbranchaud/til](https://github.com/jbranchaud/til) and [simonw/til](https://github.com/simonw/til/).
 
-Overall TILs: 0
+Overall TILs: {{ tils }}
 
 ---
 
 ### Categories
 
+{% for category in categories %}
+* [{{ category.name }}]({{ category.link }})
+{% endfor %}
 
 ---
 
+{% for category in categories %}
+### {{ category.name }}
+
+{% for topic in category.topics %}
+- [{{ topic.name }}]({{ topic.link }})
+{% endfor %}
+
+{% endfor %}
