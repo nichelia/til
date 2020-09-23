@@ -131,7 +131,6 @@ def get_categories_and_topics(root_directory: str) -> Dict:
         {dict} Data to be used in the template
     """
     ret = {}
-    root_directory = "."
     markdown_files = set(Path(root_directory).glob('**/*.md')) - set(Path(root_directory).glob('*.md'))
     files = sorted(markdown_files, reverse=True)
 
@@ -151,6 +150,10 @@ def get_categories_and_topics(root_directory: str) -> Dict:
             ret["categories"].append(data)
             category = new_category
             topics = []
+            data = {"name": get_topic_name(str(file.stem)),
+                    "link": get_topic_link(str(file)),
+                    "createdDateTime": get_topic_created_datetime(getattr(file.stat(), "st_birthtime", 0))}
+            topics.append(data)
         else:
             data = {"name": get_topic_name(str(file.stem)),
                     "link": get_topic_link(str(file)),

@@ -7,7 +7,7 @@
 This repository is a placeholder of things I learn on a daily basis. This may include programming languages/tricks/hacks, technologies, command line tools, etc.
 Inspired by [jbranchaud/til](https://github.com/jbranchaud/til) and [simonw/til](https://github.com/simonw/til/).
 
-Overall TILs: 2
+Overall TILs: 3
 
 ---
 
@@ -20,7 +20,10 @@ Overall TILs: 2
 
 ### Kubernetes
 
-- [Delete Stuck Namespace](kubernetes/delete-stuck-namespace.md) 
+* [Delete Stuck Namespace](kubernetes/delete-stuck-namespace.md) - 2020-07-19 09:59 (EEST)  
+* [Get Sorted Events](kubernetes/get-sorted-events.md) - 2020-09-21 23:32 (EEST)  
+
 ### Mac
 
+* [Restart Touch Bar](mac/restart-touch-bar.md) - 2020-09-19 12:25 (EEST)  
 
