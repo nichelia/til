@@ -20,10 +20,10 @@ Overall TILs: 3
 
 ### Kubernetes
 
-* [Delete Stuck Namespace](kubernetes/delete-stuck-namespace.md) - 2020-07-19 09:59 (EEST)  
-* [Get Sorted Events](kubernetes/get-sorted-events.md) - 2020-09-21 23:32 (EEST)  
+* [Delete Stuck Namespace](kubernetes/delete-stuck-namespace.md)   
+* [Get Sorted Events](kubernetes/get-sorted-events.md)   
 
 ### Mac
 
-* [Restart Touch Bar](mac/restart-touch-bar.md) - 2020-09-19 12:25 (EEST)  
+* [Restart Touch Bar](mac/restart-touch-bar.md)   
 
